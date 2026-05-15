@@ -41,6 +41,23 @@ app.use('/api/ai', aiRoutes);
 // export routes here
 app.use('/api/export', exportRoutes);
 
+
+
+app.get("/", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "API is running successfully"
+  });
+});
+
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    success: true,
+    status: "healthy",
+    uptime: process.uptime(),
+    timestamp: new Date().toISOString()
+  });
+});
 //start server
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {

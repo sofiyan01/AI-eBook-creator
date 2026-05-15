@@ -1,5 +1,5 @@
-const API_BASE_URL = "https://mern-e-book-backend.onrender.com/api";
-export const BASE_URL = "https://mern-e-book-backend.onrender.com";
+const API_BASE_URL = "https://mern-e-book-backend.onrender.com/api" || "http://localhost:8000/";
+export const BASE_URL = "https://mern-e-book-backend.onrender.com" || "http://localhost:8000/";
 
 export const API_PATHS = {
   AUTH: {

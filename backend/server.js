@@ -9,6 +9,7 @@ import authRoutes from './routes/authRoutes.js';
 import bookRoutes from './routes/bookRoutes.js';
 import aiRoutes from './routes/aiRoutes.js';
 import exportRoutes from './routes/exportRoures.js';
+import morgan from "morgan"
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -28,6 +29,7 @@ app.use(cors({
 //middleware
 app.use(express.json()); // use for converting json data to js objects
 app.use(cookieParser());
+app.use(morgan("common"))
 
 //static folder for uploads
 app.use('/backend/uploads', express.static(path.join(__dirname, 'uploads')));
